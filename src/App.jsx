@@ -9,6 +9,7 @@ export const App = ()=> {
     setTodoText(event.target.value)
   }
   const onClickAdd = () =>{
+    if (todoText === "")return;
     const newTodos = [...incompleteListTodos,todoText]
     setIncompleteListTodos(newTodos);
     alert(todoText);
