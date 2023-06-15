@@ -3,10 +3,16 @@ import "./styles/main.css"
 export const App = ()=> {
   const [incompleteListTodos ,setIncompleteListTodos] = useState(["未完了リスト1","未完了リスト2"]);
   const [completeListTodos ,setCompleteListTodos] = useState(["完了リスト1","完了リスト2"]);
+
+  const [todoText,setTodoText] = useState('')
+  const onChangeTodoText = (event) =>{
+    setTodoText(event.target.value)
+  }
+
   return(
     <>
       <div className="input-area">
-        <input id="add-text" placeholder="TODOを入力" />
+        <input id="add-text" placeholder="TODOを入力" value={todoText} onChange={onChangeTodoText} />
         <button id="add-button">追加</button>
       </div>
       <div className="incomplete-todo-area">
