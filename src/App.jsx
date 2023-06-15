@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles/main.css"
 export const App = ()=> {
+  const [incompleteListTodos ,setIncompleteListTodos] = useState(["未完了リスト1","未完了リスト2"]);
+  const [completeListTodos ,setCompleteListTodos] = useState(["完了リスト1","完了リスト2"]);
   return(
     <>
       <div className="input-area">
@@ -10,24 +12,33 @@ export const App = ()=> {
       <div className="incomplete-todo-area">
         <p className="title">未完了のリスト</p>
         <ul>
-          <li>
-            <div className="li-wrapper">
-              <p>todoリスト</p>
-              <button>完了</button>
-              <button>削除</button>
-            </div>
-          </li>
+          {incompleteListTodos.map((todo) =>{
+            return(
+              <li key={todo}>
+                <div className="li-wrapper">
+                  <p>{todo}</p>
+                  <button>完了</button>
+                  <button>削除</button>
+                </div>
+              </li>
+            )
+          })}
+
         </ul>
       </div>
       <div className="complete-todo-area">
         <p className="title">完了のリスト</p>
         <ul>
-          <li>
-            <div className="li-wrapper">
-              <p>todoリスト</p>
-              <button>戻す</button>
-            </div>
-          </li>
+        {completeListTodos.map((todo) =>{
+            return(
+              <li key={todo}>
+                <div className="li-wrapper">
+                  <p>{todo}</p>
+                  <button>戻す</button>
+                </div>
+              </li>
+            )
+          })}
         </ul>
       </div>
     </>
