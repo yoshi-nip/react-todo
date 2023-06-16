@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./styles/main.css"
 export const App = ()=> {
-  const [incompleteListTodos ,setIncompleteListTodos] = useState(["未完了リスト1","未完了リスト2"]);
-  const [completeListTodos ,setCompleteListTodos] = useState(["完了リスト1","完了リスト2"]);
+  const [incompleteListTodos ,setIncompleteListTodos] = useState([]);
+  const [completeListTodos ,setCompleteListTodos] = useState([]);
 
   const [todoText,setTodoText] = useState('')
   const onChangeTodoText = (event) =>{
