@@ -51,34 +51,12 @@ export const App = ()=> {
         <p className="title">未完了のリスト</p>
         <ul>
           <InCompleteTodos todos = {incompleteListTodos} onClickComplete={onClickComplete} onClickDelete={onClickDelete} />
-          {/* {incompleteListTodos.map((todo,index) =>{
-            return(
-              <li key={todo}>
-                <div className="li-wrapper">
-                  <p>{todo}</p>
-                  <button onClick = {()=>onClickComplete(index)}>完了</button>
-                  <button onClick = {()=>onClickDelete(index)}>削除</button>
-                </div>
-              </li>
-            )
-          })} */}
-
         </ul>
       </div>
       <div className="complete-todo-area">
         <p className="title">完了のリスト</p>
         <ul>
           <CompleteTodos todos={completeListTodos} onClickBack={onClickBack} />
-        {/* {completeListTodos.map((todo ,index) =>{
-            return(
-              <li key={todo}>
-                <div className="li-wrapper">
-                  <p>{todo}</p>
-                  <button onClick = {()=>onClickBack(index)}>戻す</button>
-                </div>
-              </li>
-            )
-          })} */}
         </ul>
       </div>
     </>
